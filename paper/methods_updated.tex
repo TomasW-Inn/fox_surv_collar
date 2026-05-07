@@ -1,59 +1,3 @@
-\documentclass[12pt,a4paper,final,abstract=true,headings=small]{scrartcl}
-\usepackage{startup}
-\usepackage{csquotes}
-
-\addbibresource{BayesSurvFox.bib}   % ← here, in the .tex file
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \usepackage[disable,nolists, tablesfirst, heads]{endfloat}  % Format where figures and tables will go
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% ------------------------------------------------------------
-% Title, authors, affiliations
-% ------------------------------------------------------------
-\renewcommand\Authfont{\normalsize}        % author names: normal size
-\renewcommand\Affilfont{\small\itshape}    % affiliations: small italic
-
-\title{\textbf{Latitudinal effects on weight and age dependent survival
-       of Red fox \emph{Vulpes vulpes}}}
-
-\author[1$*$]{Tomas Willebrand}
-\author[1]{Morten Odden}
-\author[2]{Gustaf Samelius}
-\author[1]{Kjartat Østbye}
-\author[3]{Jan Englund}
-\author[3]{Göran Spong}
-
-\affil[1]{Inland Norway University of Applied Sciences, Evenstad, Norway}
-\affil[2]{Swedish University of Agricultural Sciences, Grimsö Wildlife
-          Research Station, Sweden}
-\affil[3]{Swedish University of Agricultural Sciences, Uppsala, Sweden}
-\affil[$*$]{\normalfont Corresponding author:
-            \href{mailto:tomas.willebrand@inn.no}{tomas.willebrand@inn.no}}
-\date{\today}
-
-% ------------------------------------------------------------
-
-\begin{document}
-
-\maketitle
-
-\newpage
-
-\begin{abstract}
-  Blah
-
-  \medskip
-
-  \noindent\textbf{Keywords:} Red fox, \emph{Vulpes vulpes},  survival,
-\end{abstract}
-
-\newpage
-
-\section*{Introduction}
-
-
-\section*{Methods}
 \section*{Methods}
 
 \subsection*{Study Area}
@@ -110,24 +54,24 @@ resulted from hunting, and hunters returned collars with the date of harvest.
 Cases where cause of death could not be determined were classified as unknown.
 
 \begin{table}[t]
-  \centering
-  \captionsetup{font=small}
-  \caption{\textbf{Number of collared fox intervals included in the analysis,
-      by age class and sex. One fox (Ann) contributed as a single merged interval
-      across two collars; five foxes contributed two intervals each following
-      recapture. Four individuals tracked for fewer than two weeks were
-      excluded.}}
-  \label{table:capt}
-  \begin{tabular}{lrr|r}
-    \toprule
-    Sex     & Adult & Sub-adult & Total \\
-    \midrule
-    Females & 28    & 22        & 50    \\
-    Males   & 44    & 33        & 77    \\
-    \midrule
-    Total   & 72    & 55        & 127   \\
-    \bottomrule
-  \end{tabular}
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Number of collared fox intervals included in the analysis,
+  by age class and sex. One fox (Ann) contributed as a single merged interval
+  across two collars; five foxes contributed two intervals each following
+  recapture. Four individuals tracked for fewer than two weeks were
+  excluded.}}
+\label{table:capt}
+\begin{tabular}{lrr|r}
+\toprule
+Sex     & Adult & Sub-adult & Total \\
+\midrule
+Females & 28    & 22        & 50    \\
+Males   & 44    & 33        & 77    \\
+\midrule
+Total   & 72    & 55        & 127   \\
+\bottomrule
+\end{tabular}
 \end{table}
 
 \subsection*{Analysis}
@@ -135,7 +79,7 @@ To estimate the effects of age, sex, and season on survival we used the
 Andersen-Gill extension of the Cox proportional hazards (CPH) regression model
 \citep{andersenCoxsRegressionModel1982}, following approaches used for similar
 telemetry studies \citep{johnsonModelingSurvivalApplication2004,
-  ahlenSurvivalFemaleCapercaillie2013}. The non-parametric Kaplan-Meier estimator
+ahlenSurvivalFemaleCapercaillie2013}. The non-parametric Kaplan-Meier estimator
 was used to visualise and inspect survival curves
 \citep{pollockSurvivalAnalysisTelemetry1989}.
 
@@ -183,51 +127,22 @@ using the packages \texttt{survival}
 \citep{kassambaraSurvminerDrawingSurvival2024}.
 
 \begin{table}[t]
-  \centering
-  \captionsetup{font=small}
-  \caption{\textbf{Number of weeks contributed to the analysis by sex and age
-      class across all study areas and years (127 fox-intervals, 35 known
-      mortalities).}}
-  \label{table:weeks}
-  \begin{tabular}{llrr}
-    \toprule
-    Sex     & Age class & Weeks & Mortalities \\
-    \midrule
-    Males   & Adult     & 936   & 11          \\
-    Males   & Sub-adult & 663   & 15          \\
-    Females & Adult     & 650   & 4           \\
-    Females & Sub-adult & 411   & 5           \\
-    \midrule
-    Total   &           & 2660  & 35          \\
-    \bottomrule
-  \end{tabular}
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Number of weeks contributed to the analysis by sex and age
+  class across all study areas and years (127 fox-intervals, 35 known
+  mortalities).}}
+\label{table:weeks}
+\begin{tabular}{llrr}
+\toprule
+Sex     & Age class  & Weeks & Mortalities \\
+\midrule
+Males   & Adult      & 936   & 11 \\
+Males   & Sub-adult  & 663   & 15 \\
+Females & Adult      & 650   &  4 \\
+Females & Sub-adult  & 411   &  5 \\
+\midrule
+Total   &            & 2660  & 35 \\
+\bottomrule
+\end{tabular}
 \end{table}
-
-\section*{Results}
-
-\subsection*{Weight decrease with latitudes}
-
-\section*{Discussion}
-
-\subsection*{Assumptions, limitations and future directions}
-
-\subsection*{Conclusions}
-
-\newpage
-\singlespacing
-\printbibliography
-
-\newpage
-
-\section*{Appendix}
-
-\subsection*{Jags models}
-
-\emph{Model use to estimate age-dependent survival:} \label{app:brood}
-
-\begin{lstlisting}[language=JAGS]
-model {
-
-\end{lstlisting}
-
-\end{document}

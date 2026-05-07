@@ -1,0 +1,7 @@
+"Model","Covariate","HR","CI_lower","CI_upper","p"
+"Age only","AGE_bin",1.939,1.002,3.753,0.049
+"Age + Sex","AGE_bin",1.91,0.988,3.691,0.054
+"Age + Sex","SEX_bin",1.816,0.848,3.888,0.125
+"Age + Sex + Season (linear)","AGE_bin",1.835,0.951,3.541,0.07
+"Age + Sex + Season (linear)","SEX_bin",1.76,0.821,3.77,0.146
+"Age + Sex + Season (linear)","season_linear",0.976,0.948,1.005,0.109
