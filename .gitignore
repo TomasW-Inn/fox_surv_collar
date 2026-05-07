@@ -1,0 +1,36 @@
+# ---- R ----
+*.RData
+*.rds
+*.Rhistory
+.Rproj.user/
+.here
+
+# ---- Spreadsheets and binary data ----
+*.xls
+*.xlsx
+*.ods
+
+# ---- Generated analysis outputs (regenerate from R scripts) ----
+analysis/output/
+
+# ---- LaTeX build artifacts ----
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.out
+*.vrb
+*.fdb_latexmk
+*.fls
+*.blg
+*.bbl
+indent.log
+paper/build/
+
+# ---- Compiled PDFs (regenerate from .tex source) ----
+*.pdf
+
+# ---- Obsidian app config (user-specific) ----
+Fox_Survival/.obsidian/

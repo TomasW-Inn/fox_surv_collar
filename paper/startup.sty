@@ -1,0 +1,192 @@
+\ProvidesPackage{startup}
+% --------------------------------------------------------------------
+% PAGE LAYOUT
+% --------------------------------------------------------------------
+\usepackage[margin=1in]{geometry}     % Standard journal-like margins
+\usepackage{setspace}
+\onehalfspacing                       % Biology journals prefer 1.5 spacing
+
+% --------------------------------------------------------------------
+% FONTS & TYPOGRAPHY
+% --------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}                % Better kerning & spacing
+\usepackage{lmodern}                  % Nice, clean Latin Modern fonts
+
+% Optional: Switch to a more "natural science" font
+% \usepackage{mathpazo}   % Palatino
+% \usepackage{newtxtext,newtxmath} % Times-like
+
+% --------------------------------------------------------------------
+% HEADERS / FOOTERS (optional)
+% --------------------------------------------------------------------
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\ihead{}            % inside header, left
+\chead{}            % center header
+\ohead{\thepage}    % page number right
+\ofoot{}            % clear footer page number
+\cfoot{}            % clear center footer
+\setkomafont{pagehead}{\normalfont\itshape}
+
+\usepackage{outlines}
+
+
+% --------------------------------------------------------------------
+% MATHEMATICS
+% --------------------------------------------------------------------
+\usepackage{amsmath, amssymb}
+\usepackage{bm}                        % Bold math for parameters
+
+% --------------------------------------------------------------------
+% GRAPHICS & FIGURES
+% --------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{grffile}                   % Safe handling of filenames
+\usepackage{float}                     % H option for exact figure placement
+\usepackage{caption}
+\usepackage{subcaption}                % Subfigures
+\captionsetup{
+    labelfont=bf,
+    font=small,
+    width=0.9\textwidth
+}
+
+% --------------------------------------------------------------------
+% TABLES
+% --------------------------------------------------------------------
+\usepackage{booktabs}                  % Professional tables
+\usepackage{tabularx}                  % Auto-width table columns
+\usepackage{longtable}                 % Multi-page tables
+\usepackage{xltabular}                 % longtable + X columns
+\usepackage{siunitx}                   % Perfect for numeric tables
+\sisetup{detect-weight=true, detect-family=true}
+
+% --------------------------------------------------------------------
+% CODE LISTINGS  (must load before hyperref)
+% --------------------------------------------------------------------
+\usepackage{xcolor}                    % Must come before listings and hyperref
+
+\definecolor{darkblue}{HTML}{1A4B8C}
+\definecolor{customgreen}{rgb}{0,0.6,0}
+\definecolor{customgray}{rgb}{0.5,0.5,0.5}
+\definecolor{custommauve}{rgb}{0.6,0,0.8}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{listings}
+
+\lstset{
+    language         = R,
+    basicstyle       = \ttfamily\tiny,
+    breaklines       = true,
+    commentstyle     = \color{customgreen},
+    backgroundcolor  = \color{backcolour},
+    firstnumber      = 1,
+    frame            = single,
+    keepspaces       = true,
+    keywordstyle     = \color{blue},
+    numbers          = left,
+    numbersep        = 10pt,
+    numberstyle      = \tiny\color{customgray},
+    rulecolor        = \color{black},
+    showspaces       = false,
+    showstringspaces = false,
+    showtabs         = false,
+    stepnumber       = 1,
+    stringstyle      = \color{custommauve},
+    tabsize          = 2,
+}
+
+% Add JAGS as an alias for R highlighting
+\lstdefinelanguage{JAGS}[]{R}{
+    morekeywords={for, in, model, dunif, dlogis, dnorm, dgamma,
+            dmulti, dpois, dbern, dbeta, step, logit, log,
+            sum, exp, abs, max, min, loggam},
+    sensitive    = true,
+}
+
+% --------------------------------------------------------------------
+% COLOR + HYPERLINKS  (after listings)
+% --------------------------------------------------------------------
+\usepackage[
+    colorlinks=true,
+    citecolor=darkblue,
+    linkcolor=darkblue,
+    urlcolor=darkblue
+]{hyperref}
+
+% --------------------------------------------------------------------
+% REFERENCES (BIBLATEX)
+% --------------------------------------------------------------------
+\usepackage[
+    backend=biber,
+    style=authoryear,
+    natbib=true,
+    giveninits=true,
+    uniquename=false,
+    maxcitenames=2,
+    maxbibnames=99,
+    date=year,
+    doi=true,
+    url=false,
+    isbn=false
+]{biblatex}
+
+\DefineBibliographyStrings{english}{andothers = {et al.}}
+\renewbibmacro{in:}{}           % Remove "In:" in articles
+
+% --------------------------------------------------------------------
+% ECOLOGY / SPATIAL PACKAGES (OPTIONAL)
+% --------------------------------------------------------------------
+% For maps, species ranges, GIS figures
+% \usepackage{siunitx}
+% \usepackage{placeins}
+% \usepackage{pdfpages}
+
+% --------------------------------------------------------------------
+% NUMBERING / FIGURE PREFIXES (for supplements)
+% --------------------------------------------------------------------
+% For supplementary material with S1, S2, S3 figure numbering:
+% \renewcommand{\thefigure}{S\arabic{figure}}
+% \renewcommand{\thetable}{S\arabic{table}}
+
+% --------------------------------------------------------------------
+% CUSTOM MACROS USEFUL FOR ECOLOGY
+% --------------------------------------------------------------------
+\newcommand{\R}{\texttt{R}}
+\newcommand{\jags}{\texttt{JAGS}}
+\newcommand{\brms}{\texttt{brms}}
+\newcommand{\stan}{\texttt{Stan}}
+
+% For model parameters
+\newcommand{\pr}[1]{\mathrm{Pr}\left(#1\right)}
+\newcommand{\E}[1]{\mathrm{E}\left[#1\right]}
+
+% --------------------------------------------------------------------
+% LINE NUMBERS (OPTIONAL)
+% --------------------------------------------------------------------
+\usepackage{lineno}
+\linenumbers       % Uncomment to enable
+
+\graphicspath{{figures/}}
+\usepackage{outlines}
+% ------------------------------------------------------------
+% Title & Authors
+% ------------------------------------------------------------
+\usepackage{authblk}
+% \title{\textbf{Harvest effects on willow grouse}}
+% \date{\today}
+% ------------------------------------------------------------
+
+\usepackage{threeparttable}  % \begin{tablenotes}
+% \begin{table}[ht]
+% \begin{threeparttable}
+%   % ... tabular content above ...
+% \end{threeparttable}
+% \end{table}
+
+\usepackage{nameref}
+
+\usepackage{csquotes}
+

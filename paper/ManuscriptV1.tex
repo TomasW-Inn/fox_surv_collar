@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper,final,abstract=true,headings=small]{scrartcl}
+\usepackage{startup}
+\usepackage{csquotes}
+
+\addbibresource{BayesSurvFox.bib}   % ← here, in the .tex file
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage[disable,nolists, tablesfirst, heads]{endfloat}  % Format where figures and tables will go
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ------------------------------------------------------------
+% Title, authors, affiliations
+% ------------------------------------------------------------
+\renewcommand\Authfont{\normalsize}        % author names: normal size
+\renewcommand\Affilfont{\small\itshape}    % affiliations: small italic
+
+\title{\textbf{Latitudinal effects on weight and age dependent survival
+       of Red fox \emph{Vulpes vulpes}}}
+
+\author[1$*$]{Tomas Willebrand}
+\author[1]{Morten Odden}
+\author[2]{Gustaf Samelius}
+\author[1]{Kjartat Østbye}
+\author[3]{Jan Englund}
+\author[3]{Göran Spong}
+
+\affil[1]{Inland Norway University of Applied Sciences, Evenstad, Norway}
+\affil[2]{Swedish University of Agricultural Sciences, Grimsö Wildlife
+          Research Station, Sweden}
+\affil[3]{Swedish University of Agricultural Sciences, Uppsala, Sweden}
+\affil[$*$]{\normalfont Corresponding author:
+            \href{mailto:tomas.willebrand@inn.no}{tomas.willebrand@inn.no}}
+\date{\today}
+
+% ------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\begin{abstract}
+Blah 
+
+  \medskip
+
+  \noindent\textbf{Keywords:} Red fox, \emph{Vulpes vulpes},  survival, 
+\end{abstract}
+
+\newpage
+
+\section*{Introduction}
+
+
+\section*{Methods}
+
+\subsection*{Collecting harvested foxes}
+\subsection*{Analysis}
+
+\section*{Results}
+
+\subsection*{Weight decrease with latitudes}
+
+\section*{Discussion}
+
+\subsection*{Assumptions, limitations and future directions}
+
+\subsection*{Conclusions}
+
+\newpage
+\singlespacing
+\printbibliography
+
+\newpage
+
+\section*{Appendix}
+
+\subsection*{Jags models}
+
+\emph{Model use to estimate age-dependent survival:} \label{app:brood}
+
+\begin{lstlisting}[language=JAGS]
+model {
+
+\end{lstlisting}
+
+\end{document}

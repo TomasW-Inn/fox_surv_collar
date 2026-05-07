@@ -1,0 +1,26 @@
+.
+├── analysis
+│   ├── models
+│   │   └── archive
+│   ├── output
+│   │   └── archive
+│   │       
+│   └── scrips
+│       └── archive
+│           
+├── data
+│   ├── processed
+│   │   └── archive
+│   └── raw
+│	│	└── df_fox_new.csv
+│   └── archive
+├── description_for_claude.md
+├── notes
+├── paper
+│   ├── archive
+│   ├── build
+│   ├── figures
+│   ├── FoxMort.bib
+│   ├── ManuscriptV1.tex
+│   ├── startup.sty
+│   └── tables

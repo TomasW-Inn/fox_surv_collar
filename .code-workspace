@@ -1,0 +1,17 @@
+{
+  "folders": [
+    { "name": "Analysis (R)", "path": "." }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.jags": "r",
+      "*.tex": "latex"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "reditorsupport.r",
+      "james-yu.latex-workshop"
+    ]
+  }
+}
