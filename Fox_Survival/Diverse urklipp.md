@@ -1,0 +1,4 @@
+
+  
+
+Estimating animal abundance and identifying factors that drive population change are cornerstones of wildlife biology and management \citep{saetherHowLifeHistory2013,eberhardtParadigmPopulationAnalysis2002}. Recent decades have seen rapid development in methods to estimate abundance, such as distance sampling \citep{bucklandDistanceSamplingEstimating1993}, camera traps \citep{burtonREVIEWWildlifeCamera2015}, and using genomic analysis in mark/recapture analysis \citep{lukacsReviewCaptureRecapture2005,bravingtonCloseKinMarkRecapture2016}. Time series of population estimates provide \emph{per capita} population change that can be analyzed further for density dependence and periodic fluctuations \citep{royama1992analytical,turchin2013complex}, as well as correlation with changes in the environment \citep{markovchick-nichollsRelationshipsHumanDisturbance2008,knapeEffectsWeatherClimate2011}. However,

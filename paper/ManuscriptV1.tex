@@ -2,7 +2,7 @@
 \usepackage{startup}
 \usepackage{csquotes}
 
-\addbibresource{BayesSurvFox.bib}   % ← here, in the .tex file
+\addbibresource{FoxMort.bib}   % ← here, in the .tex file
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[disable,nolists, tablesfirst, heads]{endfloat}  % Format where figures and tables will go
@@ -14,15 +14,14 @@
 \renewcommand\Authfont{\normalsize}        % author names: normal size
 \renewcommand\Affilfont{\small\itshape}    % affiliations: small italic
 
-\title{\textbf{Latitudinal effects on weight and age dependent survival
-       of Red fox \emph{Vulpes vulpes}}}
+\title{\textbf{Mortality causes and survival rates of collared Red fox \emph{Vulpes vulpes}}}
 
 \author[1$*$]{Tomas Willebrand}
 \author[1]{Morten Odden}
 \author[2]{Gustaf Samelius}
 \author[1]{Kjartat Østbye}
-\author[3]{Jan Englund}
-\author[3]{Göran Spong}
+\author[3]{Bo Soderberg}
+\author[3]{Goran Spong}
 
 \affil[1]{Inland Norway University of Applied Sciences, Evenstad, Norway}
 \affil[2]{Swedish University of Agricultural Sciences, Grimsö Wildlife
@@ -49,172 +48,106 @@
 \end{abstract}
 
 \newpage
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
 
-\section*{Methods}
+Management decisions based are based on population models that vary in details and validation, often phenomoenologhical regression models are used to understand population changes.  Time series of population estimates provide \emph{per capita} population change that can be analyzed further for density dependence and periodic fluctuations \citep{royama1992analytical,turchin2013complex}, as well as correlation with changes in the environment \citep{markovchick-nichollsRelationshipsHumanDisturbance2008,knapeEffectsWeatherClimate2011}. Models based on demographic mechanisms could provide a better support for management decisions and identify which demographic processes and factors that are most important \citep{lebretonDetectingEstimatingDensity2013,gaillard2003variation,saetherAVIANLIFEHISTORY2000}. Unfortunately, obtaining data on reproductive traits and individual faiths of wildlife species, and  studies on demography often suffer from small samples which can result in demographic estimates with large uncertainties \citep{doakUnderstandingPredictingEffects2005a,popescuAssessingBiologicalRealism2016}.
+
+Survival estimates are often only available as ratios of subsequent age classes in life-table models, and these estimates can be severely biased if the assumptions are violated \citep{andersonProblemsEstimatingAgeSpecific1985}. Survival estimates based on individual follow-ups are more reliable, typically through mark-recapture/recovery or detailed information on individual fates \citep{lebretonStatisticalAnalysisSurvival1993}. However, survival estimates from mark-recovery studies are affected by net recruitment, which can result in an apparent survival that differs from true survival \citep{schaubEstimatingTrueInstead2014}. On the other hand, continuous tracking of collared individuals provide complete data on survival time and cause of death \citep{white2012analysis}, but complete observations of wildlife species are costly and require extensive field-work to capture and tag individuals. Survival probabilities from collared animals and known fates are usually obtained through Kaplain-Meier estimates \citep{pollockSurvivalAnalysisTelemetry1989}, and the effects of covariates can be evaluated by regression models such as the Andersson-Gill model \citep{andersenCoxsRegressionModel1982, murrayWildlifeSurvivalEstimation2006}.
+
+The Red fox \emph{Vulpes vulpes} is a small canid present all continents in the northern hemisphere, in addition to being introduced to Australia in 1868 \citep{lariviereVulpesVulpes1996}. It is a highly adaptive species and benefit from human settlements and agricultural activities \citep{panekRedFoxVulpesVulpes2002,jahrenImpactHumanLand2020,diaz-ruizDriversRedFox2016}.Winter conditions at northern latitudes are limiting \citep{bartonWinterSeverityLimits2007}, but the red fox have expanded north as human settlements and infrastructure developed in the tundra and arctic regions \citep{gallantDisentanglingRelativeInfluences2020}.It is considered a nuisance species due to its potential to spread disease that can affect humans \citep{andersonPopulationDynamicsFox1981,maasSignificantIncreaseEchinococcus2014}, and its predation on domestic, economical valuable and threatened species \citep{mcleodPotentialParticipatoryLandscape2010,jarnemoREDFOXREMOVAL2005,kammerlePredationPredatorControl2019}. Because of this, red foxes are often the target of control programs at different scales in large parts of its natural distribution \citep{rushtonEffectsCullingFox2006,kammerlePredationPredatorControl2019,loonstraEffectDifferentMammalian2024,heydonDemographyRuralFoxes2000}. However, the effectiveness of control programs is debated, and there is a need for better understanding of the demographic processes that drive population change \citep{newsomeRapidRecolonisationEuropean2014,kammerlePredationPredatorControl2019}. Red fox populations soon recover once control cease \citep{newsomeRapidRecolonisationEuropean2014}, and despite its importance, there are few studies that have gathered detailed information on demographic rates from individual red foxes, especially survival probabilities. See \citet{devenish-nelsonDemographyCarnivoreRed2013} for an overview.
+
+Here we use data from rom 126 GPS-collared red foxes to investigate mortality causes and hazard rates. We expect the different sexes to be exposed to different mortality causes and have different survival probabilities because male foxes show larger home ranges \citep{waltonVariationHomeRange2017} and traverse longer distances during natal dispersal \citep{englundPopulationDynamicsRed1980}. We expect subadults to show higher hazard rates compared to adults, and that anthropogenic  mortality causes are common in fox populations due to their association with human settlements and infrastructure. Seasonal patterns in mortality causes and survival rates are also investigated, with the expectation that hunting is more common in autumn/winter.
+
+
 \section*{Methods}
 
 \subsection*{Study Area}
-Foxes were captured and collared in four different areas along a gradient of
-decreasing landscape productivity and human land use as latitude increased from
-58$^{\circ}$ to 62$^{\circ}$ N in central Sweden and Norway. The southernmost
-area consists of fragmented boreonemoral forests, agricultural lands, and human
-settlements, whereas the northern areas are dominated by boreal forests and
-scattered human settlements. Norway spruce \emph{Picea abies}, Scots pine
-\emph{Pinus sylvestris}, and to a lesser degree birch \emph{Betula} spp.\ are
-the most common tree species. Broad-leaved deciduous species such as English oak
-\emph{Quercus robur} and Norway maple \emph{Acer platanoides} are present in
-the southern area but rare in the north. The northernmost part grades into
-alpine tundra of low diversity and productivity. Altitude increases with
-latitude from approximately 25 to 750 m above sea level, and snow cover shifts
-from irregular in the south to continuous from November through May in the
-north. For further details see \citet{waltonVariationHomeRange2017}.
+
+Foxes were captured and collared in four different areas along a gradient of decreasing landscape productivity and human land use as latitude increased from 58$^{\circ}$ to 62$^{\circ}$ N in central Sweden and Norway. The southernmost area consists of fragmented boreonemoral forests, agricultural lands, and human settlements, whereas the northern areas are dominated by boreal forests and scattered human settlements. Norway spruce \emph{Picea abies}, Scots pine \emph{Pinus sylvestris}, and to a lesser degree birch \emph{Betula} spp.\ are the most common tree species. Broad-leaved deciduous species such as English oak \emph{Quercus robur} and Norway maple \emph{Acer platanoides} are present in the southern area but rare in the north. The northernmost part grades into alpine tundra of low diversity and productivity. Altitude increases with latitude from approximately 25 to 750 m above sea level, and snow cover shifts from irregular in the south to continuous from November through May in the north. For further details see \citet{waltonVariationHomeRange2017}.
 
 \subsection*{Capture, Tagging \& Tracking}
-All captured foxes heavier than 5 kg were fitted with a GPS radio collar
-(Tellus Ultralight, 210 g, Televilt Inc., Lindesberg, Sweden). Foxes were
-sexed, measured, weighed, and aged at capture. Age was classified as sub-adult
-($< 1$ year) or adult ($> 1$ year) based on the degree of tooth wear and tooth
-coloration. GPS collars were programmed to acquire a minimum of three positions
-per day; variation in duty cycles resulted in collar drop-off after 6--9
-months. All capture and handling procedures were approved by the Swedish Animal
-Ethics Committee (permit numbers DNR 70--12, DNR 58--15) and the Norwegian
-Experimental Animal Ethics Committee (permit numbers 2009/122825, 2012/20038,
-2014/207803). Permits to capture wild animals were issued by the Norwegian
-Directorate for Nature Management and the Swedish Environmental Protection Board
-(NV-03459-11). For further details see
+
+All captured foxes heavier than 5 kg were fitted with a GPS radio collar (Tellus Ultralight, 210 g, Televilt Inc., Lindesberg, Sweden). Foxes were sexed, measured, weighed, and aged at capture. Age was classified as sub-adult ($< 1$ year) or adult ($> 1$ year) based on the degree of tooth wear and tooth coloration. GPS collars were programmed to acquire a minimum of three positions per day; variation in duty cycles resulted in collar drop-off after 6--9 months. All capture and handling procedures were approved by the Swedish Animal Ethics Committee (permit numbers DNR 70--12, DNR 58--15) and the Norwegian Experimental Animal Ethics Committee (permit numbers 2009/122825, 2012/20038, 2014/207803). Permits to capture wild animals were issued by the Norwegian Directorate for Nature Management and the Swedish Environmental Protection Board (NV-03459-11). For further details see
 \citet{waltonVariationHomeRange2017,waltonLongdistanceDispersalRed2018}.
 
-Between 2011 and 2019, we captured and collared 132 individual red foxes.
-One fox (Ann) was tracked continuously using two successive collars and its
-records were merged into a single uninterrupted interval. Five foxes (Frans,
-Gunilla, Ingvar, Oskar, Cristina) were recaptured after a gap in monitoring and
-treated as two independent observation intervals, consistent with the
-Andersen-Gill counting-process framework \citep{andersenCoxsRegressionModel1982}.
-Cristina was sub-adult at first capture and adult at recapture, and her two
-intervals were assigned the appropriate age class separately. We excluded four
-individuals (Gunilla's first capture, Källsvedan, Oskar's second capture, and
-Stiga) that contributed fewer than two weeks of tracking and were therefore
-uninformative for survival estimation, leaving a total of 127 individual
-fox-intervals in the analysis (Table~\ref{table:capt}).
+Between 2011 and 2019, we captured and collared 132 individual red foxes. One fox (Ann) was tracked continuously using two successive collars and its records were merged into a single uninterrupted interval. Five foxes (Frans, Gunilla, Ingvar, Oskar, Cristina) were recaptured after a gap in monitoring and treated as two independent observation intervals, consistent with the Andersen-Gill counting-process framework \citep{andersenCoxsRegressionModel1982}. Cristina was sub-adult at first capture and adult at recapture, and her two intervals were assigned the appropriate age class separately. We excluded four individuals (Gunilla's first capture, Källsvedan, Oskar's second capture, and Stiga) that contributed fewer than two weeks of tracking and were therefore uninformative for survival estimation, leaving a total of 127 individual fox-intervals in the analysis (Table~\ref{table:capt}).
 
-An inactive GPS collar transmitted a mortality signal and SMS notification used
-to record the approximate time of death. Mortality causes other than hunting
-were determined in the field: damage consistent with vehicle strikes was
-assessed visually; carcasses exhibiting alopecic patches, crusted skin, and
-sometimes a foul aromatic odour were classified as sarcoptic mange; and a wolf
-kill was identified by tracks and bite marks at the kill site. Most mortalities
-resulted from hunting, and hunters returned collars with the date of harvest.
-Cases where cause of death could not be determined were classified as unknown.
+An inactive GPS collar transmitted a mortality signal and SMS notification used to record the approximate time of death. Mortality causes other than hunting were determined in the field: damage consistent with vehicle strikes was assessed visually; carcasses exhibiting alopecic patches, crusted skin, and sometimes a foul aromatic odour were classified as sarcoptic mange; and a wolf kill was identified by tracks and bite marks at the kill site. Most mortalities resulted from hunting, and hunters returned collars with the date of harvest. Cases where cause of death could not be determined were classified as unknown.
 
-\begin{table}[t]
-  \centering
-  \captionsetup{font=small}
-  \caption{\textbf{Number of collared fox intervals included in the analysis,
-      by age class and sex. One fox (Ann) contributed as a single merged interval
-      across two collars; five foxes contributed two intervals each following
-      recapture. Four individuals tracked for fewer than two weeks were
-      excluded.}}
-  \label{table:capt}
-  \begin{tabular}{lrr|r}
-    \toprule
-    Sex     & Adult & Sub-adult & Total \\
-    \midrule
-    Females & 28    & 22        & 50    \\
-    Males   & 44    & 33        & 77    \\
-    \midrule
-    Total   & 72    & 55        & 127   \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\input{tables/collars_table.tex}
 
 \subsection*{Analysis}
-To estimate the effects of age, sex, and season on survival we used the
-Andersen-Gill extension of the Cox proportional hazards (CPH) regression model
-\citep{andersenCoxsRegressionModel1982}, following approaches used for similar
-telemetry studies \citep{johnsonModelingSurvivalApplication2004,
-  ahlenSurvivalFemaleCapercaillie2013}. The non-parametric Kaplan-Meier estimator
-was used to visualise and inspect survival curves
+To estimate the effects of age, sex, and season on survival we used the Andersen-Gill extension of the Cox proportional hazards (CPH) regression model \citep{andersenCoxsRegressionModel1982}, following approaches used for similar telemetry studies \citep{johnsonModelingSurvivalApplication2004,   ahlenSurvivalFemaleCapercaillie2013}. The non-parametric Kaplan-Meier estimator was used to visualise and inspect survival curves
 \citep{pollockSurvivalAnalysisTelemetry1989}.
 
-Each fox contributed one row per calendar week it was present in the study,
-yielding a counting-process dataset in which each row represents the interval
-$(t_{\text{start}}, t_{\text{end}}]$ for that individual-week. The last week a
-fox was monitored was recorded as either a known mortality or a censored
-observation due to collar drop-off or failure; all preceding weeks were
-censored. Collar failure and collar drop-off (CAUSE = 9) were treated as
-non-informative right-censoring throughout. We pooled study areas and years due
-to low overall sample size.
+Each fox contributed one row per calendar week it was present in the study, yielding a counting-process dataset in which each row represents the interval $(t_{\text{start}}, t_{\text{end}}]$ for that individual-week. The last week a fox was monitored was recorded as either a known mortality or a censored observation due to collar drop-off or failure; all preceding weeks were censored. Collar failure and collar drop-off (CAUSE = 9) were treated as non-informative right-censoring throughout. We pooled study areas and years due to low overall sample size.
 
-We set the start of the red fox year to ISO week 36 (early September), when
-cubs typically separate from family groups, and expressed time within the year
-as a continuous fox-week variable running from 1 (week 36) to 52 (week 35 of
-the following calendar year). Sub-adults whose tracking extended beyond week 35
-of the calendar year following their capture year were reclassified as adults
-from that point onward; two individuals (Cristina and Gijom) met this criterion.
+We set the start of the red fox year to ISO week 36 (early September), when cubs typically separate from family groups, and expressed time within the year as a continuous fox-week variable running from 1 (week 36) to 52 (week 35 of the following calendar year). Sub-adults whose tracking extended beyond week 35 of the calendar year following their capture year were reclassified as adults from that point onward; two individuals (Cristina and Gijom) met this criterion.
 
-Robust sandwich standard errors, obtained via \texttt{cluster(FoxID)} in the
-\texttt{coxph} function, accounted for the non-independence of multiple
-observation rows from the same individual
-\citep{therneauPackageSurvivalAnalysis2024}. We developed and compared five
-candidate CPH models containing combinations of age (sub-adult vs.\ adult),
-sex, and season (Table~\ref{table:models}). Season was evaluated as: (i) a
-binary variable (autumn/winter vs.\ spring/summer), (ii) a continuous linear
-fox-week covariate, (iii) a sine-cosine pair capturing circular annual
-periodicity, and (iv) a four-level factor (autumn, winter, spring, summer).
-Models were compared using Akaike's Information Criterion (AIC) computed from
-the partial log-likelihood. Likelihood ratio tests (LRT) between nested models
-were performed on refitted models without the \texttt{cluster()} argument,
-because the robust variance estimator does not alter the partial log-likelihood
-and therefore does not affect LRT statistics. We assessed whether a sex
-$\times$ season interaction improved model fit, but given only nine female
-mortality events and the rule of thumb of approximately ten events per
-estimated parameter, this interaction was considered underpowered and is
-reported for transparency only.
+Robust sandwich standard errors, obtained via \texttt{cluster(FoxID)} in the \texttt{coxph} function, accounted for the non-independence of multiple observation rows from the same individual \citep{therneauPackageSurvivalAnalysis2024}. We developed and compared five candidate CPH models containing combinations of age (sub-adult vs.\ adult), sex, and season (Table~\ref{table:models}). Season was evaluated as: (i) a binary variable (autumn/winter vs.\ spring/summer), (ii) a continuous linear fox-week covariate, (iii) a sine-cosine pair capturing circular annual periodicity, and (iv) a four-level factor (autumn, winter, spring, summer). Models were compared using Akaike's Information Criterion (AIC) computed from the partial log-likelihood. Likelihood ratio tests (LRT) between nested models were performed on refitted models without the \texttt{cluster()} argument, because the robust variance estimator does not alter the partial log-likelihood and therefore does not affect LRT statistics. We assessed whether a sex $\times$ season interaction improved model fit, but given only nine female mortality events and the rule of thumb of approximately ten events per estimated parameter, this interaction was considered underpowered and is reported for transparency only.
 
-The proportional hazards assumption was evaluated using scaled Schoenfeld
-residuals via \texttt{cox.zph} with a rank time transformation
-\citep{therneauPackageSurvivalAnalysis2024}. All data preparation and analyses
-were conducted in R version 4.x \citep{rcoreteamLanguageEnvironmentStatistical2024},
-using the packages \texttt{survival}
-\citep{therneauPackageSurvivalAnalysis2024} and \texttt{survminer}
-\citep{kassambaraSurvminerDrawingSurvival2024}.
+The proportional hazards assumption was evaluated using scaled Schoenfeld residuals via \texttt{cox.zph} with a rank time transformation \citep{therneauPackageSurvivalAnalysis2024}. All data preparation and analyses were conducted in R version 4.x \citep{rcoreteamLanguageEnvironmentStatistical2024}, using the packages \texttt{survival} \citep{therneauPackageSurvivalAnalysis2024} and \texttt{survminer} \citep{kassambaraSurvminerDrawingSurvival2024}.
 
-\begin{table}[t]
-  \centering
-  \captionsetup{font=small}
-  \caption{\textbf{Number of weeks contributed to the analysis by sex and age
-      class across all study areas and years (127 fox-intervals, 35 known
-      mortalities).}}
-  \label{table:weeks}
-  \begin{tabular}{llrr}
-    \toprule
-    Sex     & Age class & Weeks & Mortalities \\
-    \midrule
-    Males   & Adult     & 936   & 11          \\
-    Males   & Sub-adult & 663   & 15          \\
-    Females & Adult     & 650   & 4           \\
-    Females & Sub-adult & 411   & 5           \\
-    \midrule
-    Total   &           & 2660  & 35          \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\input{tables/weeks_table.tex}
 
 \section*{Results}
 
-\subsection*{Weight decrease with latitudes}
+\subsection*{Mortalities}
+
+We registered 35 known mortality events from the 126 collared foxes. \emph{Harvest} was the most common mortality cause (63\%, n=22), followed by \emph{vehicle collision } (14\%, n=5). Three (9\%) died as consequences of \emph{Sarcoptic mange},  one was killed by \emph{Wolf predation} but left intact. The four foxes (11\%) categorized as \emph{Stress/Malnutrition} were uncertain causes and contain suspected stress, malnutrition or disease. Harvest did
+did not appear to be a more common source of mortality in males compared to females, 62\% vs. to 67\% (Fisher's exact test, P = 1, Odds ratio = 0.92). However, four of the five recorded mortalities of subadult females were attributed to hunting. See table \ref{table:mort}. All vehicle and stress deaths were males, and all disease deaths were female. However, it should be noted that the sample size is limited.
+
+\input{tables/mort_caus_table.tex}
+
+\subsection*{Survival}
+
+Kaplan-Meier curves revealed that sub-adults had markedly lower early survival compared to adults, with the curves converging over time (Figure~\ref{ref:kaplan_meier}). The log-rank test indicated a significant difference in survival between age classes (p=0.043) and a marginally non-significant difference between sexes (p=0.095). However, these curves do not adjust for covariates and should be interpreted as visual tools rather than definitive evidence of differences.
+
+The five different Cox PH models are compared in Table~\ref{table:models}. The model including age, sex,  and season as a continuous linear fox-week covariate provided the best fit (lowest AIC, concordance = 0.66). The binary season coding performed worst, and adding season improved concordance substantially over the age+sex base model. The sex $\times$ season interaction did not improve model fit (LRT chi²=1.10, df=1, p=0.295), consistent with insufficient power to detect a sex-specific seasonal pattern given only nine female mortality events.
+
+The prefered Cox PH model revealed that sub-adults had approximately twice the hazard of adults (HR~1.9, CI 0.88–4.2), though the confidence interval overlapped 1, reflecting low precision. Males had elevated hazard relative to females (HR~1.8, CI 0.73–4.6), similarly imprecise. Hazard declined as the fox year progressed (HR per fox-week ~0.96), suggesting autumn/early winter is the most dangerous period. Wide confidence intervals reflect the limited number of events (n=35) and that conclusions about direction of effects are more reliable than conclusions about magnitude.
+
+The proportional hazards assumption was satisfied for all covariates in the preferred model (Schoenfeld residuals, all p > 0.4), supporting the validity of the CPH framework.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=0.5]{KM_curves_combined2.pdf}
+  \captionsetup{font=scriptsize}
+  \caption{Kaplan Meier survival curves by age class and sex.}
+  \label{ref:kaplan_meier}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=0.45]{mortality_seasonal.pdf}
+  \captionsetup{font=scriptsize}
+  \caption{Seasonal distribution of deaths by sex.}
+  \label{ref:mortality_seasonal}
+\end{figure}
+
+
+% - Table 1: Model comparison (AIC, concordance, parameters)
+\input{tables/compare_mod_table.tex}
+% - Table 2: Hazard ratios from preferred model (HR, 95\% CI, p)
+\input{tables/model_param_table.tex}
 
 \section*{Discussion}
 
-\subsection*{Assumptions, limitations and future directions}
+
+Associated with humans, mortality causes
+Males expose themselves hiogher risk lower survival sex ratio competition for mating oppportunities. Support earlier findings on mark/recovery ystudies and life table analysis. Hunting is the most common mortality cause, but vehicle collisions and disease also contribute. Subadults are more vulnerable, likely due to inexperience and dispersal behavior. Seasonal patterns suggest higher mortality in autumn/winter, potentially linked to hunting seasons and resource scarcity.
+\subsection*{Assumptions and limitations}
+
+Survival analysis dependent on number of events, and our sample size of 35 mortalities limits precision and power to detect effects, especially for sex-specific patterns. The Cox model assumes proportional hazards, which we verified, but unmeasured confounders could bias results. Cause of death classification may be imperfect, particularly for unknown cases. Our sample may not be representative of all fox populations, limiting generalizability.
+
 
 \subsection*{Conclusions}
 
 \newpage
 \singlespacing
+
 \printbibliography
 
 \newpage

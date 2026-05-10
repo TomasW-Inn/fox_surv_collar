@@ -81,12 +81,22 @@ print(table(mort$CAUSE_label, mort$AGE))
 cat("\nTABLE 4: Cause by Area\n")
 print(table(mort$CAUSE_label, mort$AREA))
 
+head(mort)
+df2 <- mort %>%
+  group_by(SEX, AGE, CAUSE_label) %>%
+  summarise(
+    n = n()
+  ) %>%
+  arrange(SEX, AGE, desc(n))
+head(df2)
+
 # ── Table 5: Sample sizes ─────────────────────────────────────────────────────
 cat("\nTABLE 5: Sample composition\n")
 cat("Sex × Age:\n")
 print(addmargins(table(df$SEX, df$AGE)))
 cat("\nSex × Area:\n")
 print(addmargins(table(df$SEX, df$AREA)))
+
 
 # ── Figure 1: Mortality causes stacked bar by sex ────────────────────────────
 cause_order <- c(
@@ -138,7 +148,6 @@ mort$fox_week <- ifelse(mort$iso_week >= 36,
   mort$iso_week + 17
 )
 
-
 month_breaks <- c(1, 5, 9, 14, 18, 22, 27, 31, 35, 40, 44, 48)
 month_labels <- c("Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug")
 
@@ -153,13 +162,13 @@ p3 <- ggplot(
   geom_bar(width = 1) +
   annotate("rect",
     xmin = 14, xmax = 26, ymin = -Inf, ymax = Inf,
-    alpha = 0.1, fill = "steelblue"
+    alpha = 0.1, fill = "#2776b6"
   ) +
   annotate("text",
     x = 20, y = Inf, label = "Winter", vjust = 1.5,
-    size = 3.5, colour = "steelblue4"
+    size = 3.5, colour = "#2b6da7"
   ) +
-  scale_fill_manual(values = c("F" = "#d6604d", "M" = "#4393c3")) +
+  scale_fill_manual(values = c("F" = "#808080", "M" = "#272626")) +
   scale_x_continuous(breaks = month_breaks, labels = month_labels) +
   labs(
     title = "Seasonal distribution of deaths by sex",
@@ -174,6 +183,11 @@ print(p2)
 print(p3)
 dev.off()
 cat("\nSaved: mortality_causes.pdf\n")
+
+pdf("mortality_seasonal.pdf", width = 10, height = 6)
+print(p3)
+dev.off()
+
 
 # ── Tracking duration summary ─────────────────────────────────────────────────
 cat("\n", paste(rep("=", 50), collapse = ""), "\n")
@@ -192,3 +206,13 @@ cat(sprintf(
   "Duration: %.1f years\n",
   as.numeric(max(df$date.end) - min(df$date.begin)) / 365.25
 ))
+
+# Create data
+data <- matrix(c(16, 6, 26, 9),
+  nrow = 2,
+  dimnames = list(Group = c("Male", "Female"), Outcome = c("Harvested", "Other"))
+)
+data
+# Perform Fisher's Exact Test
+result <- fisher.test(data)
+print(result)

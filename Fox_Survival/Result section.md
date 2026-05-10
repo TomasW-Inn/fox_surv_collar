@@ -31,3 +31,42 @@ Explicitly acknowledge that wide confidence intervals reflect the limited number
 ---
 
 This flows from descriptive → visual → model selection → inference → assumption checking, which is the standard progression for this type of analysis. When you come back with the actual model output numbers I can draft the full text.
+
+  
+  
+
+% CAUSE_label n pct
+% Harvested 22 62.9
+% Vehicle collision 5 14.3
+% Stress / Malnutrition 4 11.4
+% Disease 3 8.6
+% Predation 1 2.9
+
+% F M
+% Disease 3 0
+% Harvested 6 16
+% Predation 0 1
+% Stress / Malnutrition 0 4
+% Vehicle collision 0 5
+% AD SA
+% Disease 2 1
+% Harvested 10 12
+% Predation 0 1
+% Stress / Malnutrition 1 3
+% Vehicle collision 2 3
+
+% Grimsö Hedemora Hedmark Kolmården
+
+% Disease 0 0 0 3
+% Harvested 2 3 6 11
+% Predation 0 1 0 0
+% Stress / Malnutrition 1 1 1 1
+% Vehicle collision 0 1 0 4
+
+% AD SA
+% Disease 2 1
+% Harvested 10 12
+% Predation 0 1
+% Stress / Malnutrition 1 3
+% Vehicle collision 2 3
+

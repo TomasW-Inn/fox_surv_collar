@@ -1,0 +1,21 @@
+\begin{table}[t]
+    \centering
+    \captionsetup{font=scriptsize}
+    \caption{Hazard ratios of three Cox proportional hazards models. Age and sex are binary variables, while season is a continuous variable.}
+    \label{table:hazard_ratios}
+    \scriptsize
+    \begin{tabular}{llrrrr}
+        \toprule
+        Model                       & Covariate & HR    & CI\_lower & CI\_upper & p     \\
+        \midrule
+        Age only                    & AGE       & 1.939 & 1.002     & 3.753     & 0.049 \\
+        \addlinespace
+        Age + Sex                   & AGE       & 1.910 & 0.988     & 3.691     & 0.054 \\
+        Age + Sex                   & SEX       & 1.816 & 0.848     & 3.888     & 0.125 \\
+        \addlinespace
+        Age + Sex + Season (linear) & AGE       & 1.835 & 0.951     & 3.541     & 0.070 \\
+        Age + Sex + Season (linear) & SEX       & 1.760 & 0.821     & 3.770     & 0.146 \\
+        Age + Sex + Season (linear) & season    & 0.976 & 0.948     & 1.005     & 0.109 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

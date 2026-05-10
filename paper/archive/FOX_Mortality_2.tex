@@ -1,0 +1,264 @@
+\input{sections/preamble} % See preamble.tex to edit the overall layout
+% Header from Page Three on: Edit below for left and right headers
+
+\graphicspath{{figures/}}
+
+\lhead{}
+\rhead{Red fox mortality causes and survival estimates}
+
+
+\begin{document}
+
+\input{sections/coverpage} % Comment out to remove cover page
+%TC:endignore
+\thispagestyle{empty} % Removes header on page two. Only needed if there is a coverpage
+
+\input{sections/title_authors}
+% \input{sections/title_noauthors}
+%\maketitle % Insert title
+
+  % Running line numbers:
+  \linenumbers
+  \setlength\linenumbersep{15pt}
+  \renewcommand\linenumberfont{\normalfont\footnotesize\sffamily\color{gray}}
+  %\pagewiselinenumbers % Same, but that reset on every page:
+  \modulolinenumbers[1] % Number only every line. Change for fewer.
+  
+\newpage
+
+\begin{abstract}
+\noindent 
+xxxx
+yyyy
+zzzz
+\end{abstract}
+
+% Insert keywords here
+\setlength\parindent{.45in} \keywords{\emph{Vulpes vulpes}, red fox, mortality, survival}
+\newpage
+
+%--------------------------------------------------------%
+% BODY TEXT
+%--------------------------------------------------------%
+\doublespacing
+
+% Main Text
+\section*{Introduction}
+
+The Red fox \emph{Vulpes vulpes} is a small canid present all continents in the northern hemisphere, in addition to being introduced to Australia in 1868 \citep{lariviereVulpesVulpes1996}. Red fox is a highly adaptive species and benefit from human settlements and agricultural activities \citep{panekRedFoxVulpesVulpes2002,jahrenImpactHumanLand2020,diaz-ruizDriversRedFox2016}. Red foxes are limited by winter conditions at northern latitudes \citep{bartonWinterSeverityLimits2007}, but have expanded north as human settlements and infrastructure developed in the tundra and arctic regions \citep{gallantDisentanglingRelativeInfluences2020}. The Red fox is considered a nuisance species due to its potential to spread disease that can affect humans \citep{andersonPopulationDynamicsFox1981,maasSignificantIncreaseEchinococcus2014}, and its predation on domestic, economical valuable and threatened species \citep{mcleodPotentialParticipatoryLandscape2010,jarnemoREDFOXREMOVAL2005,kammerlePredationPredatorControl2019}. Because of this, red foxes are often the target of control programs at different scales in large parts of its natural distribution \citep{rushtonEffectsCullingFox2006,kammerlePredationPredatorControl2019,loonstraEffectDifferentMammalian2024,heydonDemographyRuralFoxes2000}. 
+
+
+Intensive hunting may reduce the male;female sex ratio \citep{yonedaEffectsHuntingAge1982,gortazarHabitatRelatedDifferences2003}, although the risk of females being harvested appear to increase in late winter \citep{goszczynskiPopulationDynamicsRed1989,galbyMoreFemaleRed2010}. However, populations soon recover once control cease \citep{newsomeRapidRecolonisationEuropean2014}.  Life-history characteristics put red fox on the fast side of the fast-slow continuum \citep{heppellLifeHistoriesElasticity2000}, and red fox populations that were reduced by more than ninety percent after initial outbreaks of \emph{Sarcoptes scabiei} recovered within a decade  \citep{soulsbury2007impact,willebrandDecliningSurvivalRates2022}. However, despite its importance, there are few studies that have gathered detailed information on demographic rates from individual red foxes, especially survival probabilities. See \citet{devenish-nelsonDemographyCarnivoreRed2013} for an overview.
+
+
+
+Estimating animal abundance and identifying factors that drive population change are cornerstones of wildlife biology and management \citep{saetherHowLifeHistory2013,eberhardtParadigmPopulationAnalysis2002}.  Recent decades have seen rapid development in methods to estimate abundance, such as distance sampling \citep{bucklandDistanceSamplingEstimating1993}, camera traps \citep{burtonREVIEWWildlifeCamera2015}, and using genomic analysis in mark/recapture analysis \citep{lukacsReviewCaptureRecapture2005,bravingtonCloseKinMarkRecapture2016}. Time series of population estimates provide \emph{per capita} population change that can be analyzed further for density dependence and periodic fluctuations \citep{royama1992analytical,turchin2013complex}, as well as correlation with changes in the environment \citep{markovchick-nichollsRelationshipsHumanDisturbance2008,knapeEffectsWeatherClimate2011}. However, population models based on fecundity, survival and recruitment reveal demographic mechanisms and support for management decisions\citep{lebretonDetectingEstimatingDensity2013,gaillard2003variation,saetherAVIANLIFEHISTORY2000}. Unfortunately, obtaining data on reproductive traits and individual faiths of wildlife species, and thus studies on demography often suffer from small samples which can result in demographic estimates with large uncertainties \citep{doakUnderstandingPredictingEffects2005a,popescuAssessingBiologicalRealism2016}. 
+% Bayesian hierarchical modelling \citep{kery2011bayesian,hobbs2015bayesian} have made it possible to link several sources of individual and population data in the same model \citep{schaub2021integrated}. \todo[size=\tiny]{Exclude this last line.} 
+
+
+
+Survival estimates are often only available as ratios of subsequent age classes in life-table models, and these estimates can be severely biased if the assumptions are violated \citep{andersonProblemsEstimatingAgeSpecific1985}. Survival estimates based on individual follow-ups are more reliable, typically through mark-recapture/recovery or detailed information on individual fates \citep{lebretonStatisticalAnalysisSurvival1993}. However, survival estimates from mark-recovery studies are affected by net recruitment, which can result in an apparent survival that differs from true survival \citep{schaubEstimatingTrueInstead2014}. On the other hand, continuous tracking of collared individuals provide complete data on survival time and cause of death \citep{white2012analysis}, but complete observations of wildlife species are costly and require extensive field-work to capture and tag individuals. Survival probabilities from collared animals and known fates are usually obtained through Kaplain-Meier estimates \citep{pollockSurvivalAnalysisTelemetry1989}, and the effects of covariates can be evaluated by regression models such as the Andersson-Gill model \citep{andersenCoxsRegressionModel1982, murrayWildlifeSurvivalEstimation2006}. 
+
+Here we use data from 126 GPS-collared red foxes to determine mortality causes and estimate survival probabilities of sub-adult and adult foxes of both sexes. We evaluate the effect of age and sex on survival probability using the Cox Proportional Hazard (CPH) model. We expect the different sexes to be exposed to different mortality causes and have different survival probabilities because male foxes show larger home ranges \citep{waltonVariationHomeRange2017} and traverse longer distances during natal dispersal \citep{englundPopulationDynamicsRed1980}. 
+
+
+\section*{Methods}
+
+\subsection*{Study Area}
+
+Foxes were captured and collared in four different areas along a gradient of decreasing landscape productivity and human land use as latitude increased from 58$^{\circ}$ to 62$^{\circ}$ in central Sweden and Norway. The southernmost area consists of fragmented boreonemoral forests, agricultural lands, and human settlements, whereas the northern  areas are dominated by boreal forests and scattered human settlements. Norway spruce \emph{Picea abies}, Scots pine \emph{Pinus sylvestris}, and to a less degree birch \emph{Betula} spp. are the most common tree species. Broad leaf deciduous tree species, for example English oak \emph{Quercus robur} and Norway maple \emph{Acer platanoides}, are present in the southern are but rare in the northern areas. The northernmost part gradually change into alpine tundra of low diversity and productivity. The altitude increase with latitude from about 25 to 750 meters above sea level. Snow cover is irregular in the southern area but the ground is snow covered from November to May in the northernmost area. For further details see \citet{waltonVariationHomeRange2017}.
+
+\subsection*{Capture, Tagging \& Tracking}
+
+All captured foxes larger than 5 kg were fitted with a GPS radio collar (Tellus Ultralight, 210g, Televilt, Inc. Lindesberg, Sweden). Captured foxes were sexed, measured, weighed, and aged. Age was defined as sub-adult (< 1 year) or adult (> 1 year) based on the amount of tooth wear and tooth coloration. GPS collars varied in position schedules but acquired a minimum of three positions per day. The different schedules resulted in a collar drop-off between 6 and 9 months. All capture and handling procedures were approved by, and followed the ethical guidelines required by, the Swedish Animal Ethics Committee (permit numbers DNR 70–12, DNR 58–15) and the Norwegian Experimental Animal Ethics Committee (permit numbers 2009/122825, 2012/20038, 2014/207803). In addition, permits to capture wild animals were provided by the Norwegian Directorate for Nature Management and the Swedish Environmental Protection Board (NV-03459-11). For further details see \citep{waltonVariationHomeRange2017,waltonLongdistanceDispersalRed2018}.
+
+Between 2011 and 2019, we captured and collared a total of 126 individual red foxes. Six (4 males, 2 females) were recaptured as adults, and fitted with a new collar. We excluded eight sub-adults (3 females and 5 males) captured and collared from the data because they contributed less than two weeks tracking. See table \ref{table:capt}. 
+
+An inactive GPS-collar resulted in a mortality signal and SMS-notification used as time of death. Mortality causes except hunting were determined in the field, and damages from vehicle-strikes was evident. Carcasses with alopecic patches, crusted skin, and sometimes a foul aromatic odor were considered to have died from sarcoptic mange. A wolf kill was identified by tracks and bite marks at the kill site. Most mortality causes were from hunting, and hunters returned the collars with the date the fox was killed. Uncertain causes of mortality were classified as other causes.
+
+
+\begin{table}[t]
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Number of collared fox individuals based on age and sex. Six foxes were recaptured and fitted with a new collar.}}
+\label{table:capt}
+\begin{tabular}{lrr|r}
+\toprule
+Sex & Adult & Sub-adult & Total \\
+\midrule
+Females   & 30 & 20 & 50 \\
+Males     & 42 & 34 & 76 \\
+\midrule
+Total     & 72 & 54 & 126 \\
+\bottomrule
+\end{tabular}
+\end{table}
+%%
+
+
+\subsection*{Analysis}
+
+In order to estimate the effect of sex and age we used the Andersen-Gill modification of the CPH regression model\citep{andersenCoxsRegressionModel1982} similar to \citep{johnsonModelingSurvivalApplication2004} and \citet{ahlenSurvivalFemaleCapercaillie2013}. The non-parametric Kaplan-Meier estimator was used to plot and inspect the survival curves \citep{pollockSurvivalAnalysisTelemetry1989}. We determined if an individual fox was present in each week of the study, and added those weeks as observations to the data. Thus, each individual and each different week became a row in the data. The last week a fox was present was either a known mortality or a censored observation (unknown fate) due to collar drop-off or failure. All weeks the fox was present before the last was defined as a censored observation. Only weeks when we knew the status of a fox were included. We pooled areas and years due to low sample size, and set the start of a red fox year to week 36 in autumn when cubs would have separated from their litters. We considered sub-adults to become adults after week 35 in their second year, and nine sub-adults contributed as adults after week 35 their second year.  
+
+We developed and evaluated five competing CPH regression models including combinations of age and sex using the function \emph{cph} in the survival package \citep{therneauPackageSurvivalAnalysis2024}. The different models were compared using AICc with the function \emph{aictab} \citep{AICcmodavg-package}. We evaluated the assumptions of CPH by using scaled Schoenfeld residuals using the functions \emph{Cox.zph} and \emph{ggcoxzph} \citep{therneauPackageSurvivalAnalysis2024,kassambaraSurvminerDrawingSurvival2024}. All data preparation and analysis were made in R \citep{rcoreteamLanguageEnvironmentStatistical2024}.
+
+\begin{table}[t]
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Number of weeks the 126 collared fox individuals contributed to the study based separated by age and sex. Years were pooled.}}
+\label{table:weeks}
+\begin{tabular}{llr}
+\toprule
+Sex     & Age       & Total weeks \\
+\midrule
+Males   & Adult     &  1003  \\ 
+Males   & Sub-adult  &  653  \\
+Females & Adult     &  696  \\
+Females & Sub-adult  &  408  \\
+\bottomrule
+\end{tabular}
+\end{table}
+%%
+                                 
+\section*{Results}
+
+We registered 35 known mortality events from the 126 collared foxes. \emph{Hunting} was the most common mortality cause (63\%), followed by \emph{traffic} (14\%). Three (9\%) died as consequences of \emph{sarcoptic mange},  one was killed by \emph{wolves} but left intact. The four foxes (11\%) categorized as \emph{other} were uncertain causes and contain suspected traffic kills, malnutrition or disease. We did not find that any sex were more exposed to hunting than other mortality causes (Fisher's exact test, P = 0.79, Odds ratio = 1.22) when sub-adults and adults were pooled. However, four of the five recorded mortalities of sub-adult females were attributed to hunting. See table \ref{table:mort}. 
+
+\begin{table}[t]
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Mortality causes of 35 recorded deaths from 126 collared foxes sparated by age and sex.}}
+\label{table:mort}
+\begin{tabular}{llrrrrr|r}
+\toprule
+Age     & Sex      & Hunting & Traffic & Disease & Wolf kill & Other & Total \\
+\midrule
+Adult & Female     &  2 & 0 & 2 & 0 & 0 &   4 \\
+Adult & Male       &  8 & 2 & 0 & 0 & 1 &  11 \\
+Sub-adult & Female &  4 & 0 & 1 & 0 & 0 &   5 \\
+Sub-adult & Male   &  8 & 3 & 0 & 1 & 3 &  15 \\
+\midrule
+Total   &    &       22 & 5 & 3 & 1 & 4   & 35 \\
+\bottomrule
+\end{tabular}
+\end{table}
+%%
+
+None of the five CPH-models showed a significant p-value (Walds test), and there were small differences in AICc-valuesbetween the five models. See table \ref{table:aic}. The models including \emph{sex} or \emph{age + sex} had lowest AICc, and we use this latter model as the preferred model. The test for the scaled Schoenfeld residuals of this model showed no significant deviations (P>0.05 for the global model and individual covariates). Fig. \ref{fig:surv1} presents the Kaplan-Meier estimates stratified on \emph{age} and \emph{sex} where week 0 is set to week 35 in early September. The table at the bottom of the figure shows the number of individuals at risk for each strata. 
+
+Table \ref{table:surv} presents the annual end point values and the 95\% confidence intervals of the Kaplan-Meier estimator for stratified on \emph{age} and \emph{season}. The survival estimates are higher for females compared to males, and adults show a higher survival than sub-adults. The survival probability of sub-adults is about 15\% lower than adults in each sex.
+
+\begin{table}[b]
+\centering
+\captionsetup{font=small}
+\caption{\textbf{Comparisons of the five different CPH-models. All covariates were factors with two levels.}}
+\label{table:aic}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model    & K & AICc & Delta\_AICc & AICcWt & Cum.Wt & LL & Walds Test\\ 
+\midrule
+Sex        & 1 & 280.58 & 0.00 & 0.26 & 0.26 & -139.29 &  p=0.1 \\
+Age + Sex  & 2 & 280.74 & 0.16 & 0.24 & 0.50 & -138.37 &  p=0.1 \\
+Intercept  & 0 & 280.93 & 0.36 & 0.22 & 0.71 & -140.47 & \\ 
+Age        & 1 & 281.14 & 0.56 & 0.20 & 0.91 & -139.57 &  p=0.2 \\ 
+Age * Sex  & 3 & 282.68 & 2.10 & 0.09 & 1.00 & -138.33 &  p=0.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+%%
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[scale=0.5]{Sex_Age_Surv2.pdf}
+ \captionsetup{font=scriptsize}
+ \caption{\textbf{Kaplan\_Meier curves for seasonal survivorship estimates of GPS-collared red foxes sparated by age and sex. The table at the bottom of the figure shows the individuals at risk for each strata.}}
+  \label{fig:surv1}
+ \end{figure}
+
+
+\begin{table}[t]
+\centering
+\captionsetup{font=scriptsize}
+\caption{\textbf{Estimates of survival probabilities of GPS-collared red foxes  separated by age and sex.}}
+\label{table:surv}
+\begin{tabular}{llrrr}
+\toprule
+Age & Sex & Estimate & Lower C.I. & Upper C.I.  \\
+\midrule
+Adult     & Female  &  0.677  &  0.141  &  1      \\
+Adult     & Male    &  0.534  &  0.098  &  0.767  \\
+Sub-adult & Female  &  0.538  &  0.152  &  0.937  \\
+Sub-adult & Male    &  0.373  &  0.109  &  0.660  \\
+\bottomrule
+\end{tabular}
+\end{table}
+%%
+
+\section*{Discussion}
+
+This is the first study using GPS-collars to obtain  individual faiths of red fox and estimate annual survival estimates for adults and sub-adults (but see \citet{gosselinkSurvivalCauseSpecificMortality2007}). We found that survival of sub-adults was lower than adults, similar to earlier studies \citep{gosselinkSurvivalCauseSpecificMortality2007,yonedaEffectsHuntingAge1982,goszczynskiPopulationDynamicsRed1989,harrisDemographyTwoUrban1987,willebrandDecliningSurvivalRates2022}. Our estimates of survival rates for sub-adult males are similar to the earlier reported estimates. However, our estimate for sub-adult females was substantially higher than sub-adult males. Similarly, estimated survival rate of adult females was higher than adult males. The differences between sexes was similar in both age classes. Higher survival of females compared to males was also reported by  \citet{heydonDemographyRuralFoxes2000}, although at lower survival rates. Despite a sample size of 126 red foxes, we had to pool data from a large area during nine years. Area and yearly differences reduce precision of the parameter estimates of the Anderson-Gill model evaluating differences in sex and age. The confidence intervals around the survival estimates are large, but are at least as reliable as estimates based on life-table models. We believe our result is a useful contribution when developing both theoretical and applied populations models of red fox dynamics \citep{devenish-nelsonDemographyCarnivoreRed2013, schaub2021integrated}.
+
+Several studies using harvested foxes have shown a male bias in the samples obtained \citep{harrisDemographyTwoUrban1987,gortazarHabitatRelatedDifferences2003,goszczynskiPopulationDynamicsRed1989,yonedaEffectsHuntingAge1982,englund1970some,hartova-nentvichovaCranialOntogeneticVariability2010}. The hunting season overlaps with the period when males show higher activity and move longer distances compared to females \citep{englundPopulationDynamicsRed1980}. In addition, adult males have larger home ranges than adult females, and tend to make more frequent and longer excursions compared to females \citep{soulsburyBehavioralSpatialAnalysis2011}.  The bias is reduced in intensively hunted areas, and even reversed when foxes are killed in spring \citep{yonedaEffectsHuntingAge1982,goszczynskiPopulationDynamicsRed1989, galbyMoreFemaleRed2010}. Higher survival rates of females will result an excess of adult females in the population, which can explain why some adult males show exploratory movements and non-overlapping clusters in spring. A female skewed sex ratio further emphasize the bias of adult males compared to adult females in samples of harvested foxes, and is most likely due to a risk prone behaviour of males compared to females.   
+%We don't expect that the sex ratio of cubs and early survival deviate from 50/50 \citep{englund1970some}. 
+In this study, hunting mortality dominated the mortality causes despite extensive road networks and a persistence prevalence of sarcoptic mange in the red fox population \citep{carricondo-sanchezRangeMangeSpatiotemporal2017}.\citet{gosselinkSurvivalCauseSpecificMortality2007} identified sarcoptic mange as the most common mortality cause in urban areas, with a similar prevalence level as in our area, 3.15\% (average) versus 1-7\% (range). In rural areas, they had observed a 10-fold decrease in hunting mortality and that coyote predation had become the most important source of mortality. In Sweden, hunting red fox is considered as a valuable sport hunting beside a source of fur, and between 50 000 and 80 000 foxes have been harvested annually since the turn of the century. Furthermore, Sweden lack a predator as the coyote in the meso-predator guild, and the large predators in Sweden as wolves, lynx, wolverines and golden eagles are known to occasionally kill red fox \citep{helldinLynxLynxLynx2006,sulkavaChangesDietGolden1999,vandijkForagingStrategiesWolverines2008}. However, these predators occur at low densities and  the pronounced vigilant behavior of red fox probably reduce the risk of detection \citep{berger-talLookYouLeap2009}. 
+
+
+
+
+
+
+% \todo[size=\footnotesize]{Better references here}
+
+% \vspace{.25in}
+% \begin{center}
+% {\LARGE \textit{TABLE 1 ABOUT HERE.}}
+% \end{center}
+
+% \begin{equation}
+% \label{eq:emc}
+% e = mc^2
+% \end{equation}
+
+% \hl{Etiam congue sollicitudin diam non porttitor.} % highlight
+% \ul{Donec eget augue ut nulla placerat hendrerit ac ut mi.}  % underline
+% \st{Aenean eleifend purus et massa consequat facilisis.} % Strike out
+% \todo[inline,color=blue!40]{Sample inline comment, with blue color. Good for bigger comments. } % inline large comment
+
+%--------------------------------------------------------%
+%	REFERENCE LIST
+%--------------------------------------------------------%
+\newpage
+\singlespacing
+\printbibliography
+
+%--------------------------------------------------------%
+%	END NOTES
+%--------------------------------------------------------%
+	% Uncomment these three lines below if using endnotes
+    % instead of footnotes
+      % \newpage
+      % \section*{End Notes}
+      % \theendnotes
+%--------------------------------------------------------%
+%	FIGURES
+%--------------------------------------------------------%
+% \newpage
+% \section*{Figures}
+% \begin{figure}[ht!]
+% \centering\includegraphics[width=0.4\linewidth]{figures/placeholder}
+% \caption{Figure caption}
+% \end{figure}
+
+%--------------------------------------------------------%
+%	TABLES
+%--------------------------------------------------------%
+% \newpage
+% \section*{Tables}
+% \input{tables/sample_longtable}
+% \newpage
+% \input{tables/sample_table}
+%--------------------------------------------------------%
+%	END DOCUMENT
+%--------------------------------------------------------%
+
+\end{document}

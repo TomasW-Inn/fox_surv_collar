@@ -1,0 +1,18 @@
+\begin{table}[t]
+    \centering
+    \captionsetup{font=scriptsize}
+    \caption{Model comparison table.}
+    \label{table:models}
+    \scriptsize
+    \begin{tabular}{lrrr}
+        \toprule
+        Model                         & AIC    & Concordance & Params \\
+        \midrule
+        Age only                      & 307.26 & 0.587       & 1      \\
+        Age + Sex                     & 306.68 & 0.618       & 2      \\
+        Age + Sex + Season (linear)   & 306.05 & 0.658       & 3      \\
+        Age + Sex + Season (binary)   & 308.67 & 0.618       & 3      \\
+        Age + Sex + Season (4-factor) & 306.64 & 0.697       & 5      \\
+        \bottomrule
+    \end{tabular}
+\end{table}

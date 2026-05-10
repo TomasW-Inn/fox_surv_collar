@@ -53,7 +53,14 @@ print(table(fox_level$AGE_orig))
 cat("  AREA distribution:\n")
 print(table(fox_level$AREA))
 head(fox_level)
+
+fox_level <-
+  fox_level %>% mutate(
+    total_weeks = ifelse(total_weeks > 50, 40, total_weeks)
+  )
 print(table(fox_level$total_weeks, fox_level$SEX))
+
+
 
 # =============================================================================
 # PART A — Kaplan-Meier curves
@@ -108,10 +115,6 @@ p_sex <- ggsurvplot(
   ggtheme = theme_classic()
 )
 
-library(patchwork)
-p_sex
-p_age + p_sex
-
 
 p_area <- ggsurvplot(
   km_area,
@@ -124,6 +127,12 @@ p_area <- ggsurvplot(
   ggtheme = theme_classic()
 )
 
+library(gridExtra)
+km_plot <- grid.arrange(p_age$plot, p_sex$plot, ncol = 2)
+names(p_sex)
+km_plot2 <- grid.arrange(p_age$plot, p_sex$plot, p_age$table, p_sex$table, ncol = 2, heights = c(3, 1))
+ggsave("KM_curves_combined2.pdf", km_plot2, width = 12, height = 6)
+getwd()
 # Save KM plots
 pdf("KM_curves.pdf", width = 10, height = 7)
 print(p_age)
@@ -138,6 +147,13 @@ cat("\nSaved: KM_curves.pdf\n")
 # Counting process format: Surv(sw, ew, CENS)
 # cluster(FoxID) provides robust sandwich standard errors, accounting for
 # multiple rows per individual (Andersen-Gill approach).
+head(ag)
+ag <- ag %>% filter(
+  ew < 41
+)
+
+
+ag %>% filter(ew > 40)
 
 # ── Model 1: Age only ─────────────────────────────────────────────────────────
 m1 <- coxph(Surv(sw, ew, CENS) ~ AGE_bin,
@@ -323,6 +339,7 @@ manuscript_table <- rbind(
   make_coef_table(m2, "Age + Sex"),
   make_coef_table(m3, "Age + Sex + Season (linear)")
 )
+
 cat("\n", paste(rep("=", 60), collapse = ""), "\n")
 cat("MANUSCRIPT TABLE — Hazard Ratios\n")
 print(manuscript_table, row.names = FALSE)
